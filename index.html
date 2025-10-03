@@ -104,6 +104,7 @@
 
         <nav class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
             <button data-target="overview" class="nav-btn active py-2 px-4 bg-white rounded-lg shadow-sm font-semibold text-stone-700">Overview</button>
+            <button data-target="objectives" class="nav-btn py-2 px-4 bg-white rounded-lg shadow-sm font-semibold text-stone-700">Learning Objectives</button>
             <button data-target="user-story" class="nav-btn py-2 px-4 bg-white rounded-lg shadow-sm font-semibold text-stone-700">User Stories</button>
             <button data-target="gathering" class="nav-btn py-2 px-4 bg-white rounded-lg shadow-sm font-semibold text-stone-700">Requirements Gathering</button>
             <button data-target="management" class="nav-btn py-2 px-4 bg-white rounded-lg shadow-sm font-semibold text-stone-700">Requirements Management</button>
@@ -115,6 +116,18 @@
             <section id="overview" class="content-section active">
                 <h2 class="text-2xl font-bold text-teal-600 mb-4">The Journey from Idea to Value</h2>
                 <p class="mb-6 text-stone-600">Every great product starts with an 'idea,' but transforming vague inspirations into products that truly solve problems and create value requires a systematic and rigorous process. This section will guide you through the core stages of this journey. Innovation isn't born out of thin air; it typically stems from a deep understanding of problems and opportunities. Hover over the flowchart below to explore the meaning of each step.</p>
+
+                <!-- Generating Ideas subsection -->
+                <div class="mb-6 bg-amber-50 border-l-4 border-amber-500 p-5 rounded-md">
+                    <h3 class="text-xl font-semibold mb-3 text-amber-700">💡 Generating Innovative Product Ideas</h3>
+                    <ul class="list-disc list-inside space-y-2 text-stone-700">
+                        <li><strong>Pain points</strong> are the source of innovation: unmet needs, inefficient processes, poorly designed products.</li>
+                        <li>Brainstorming, user feedback, market trend analysis, competitive analysis.</li>
+                    </ul>
+                    <div class="mt-3 p-3 bg-white rounded-md text-sm text-stone-600 italic border border-amber-200">
+                        <strong>Core message:</strong> Innovative ideas don't emerge from thin air, but from deep insights into problems and opportunities.
+                    </div>
+                </div>
                 <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center text-white font-bold">
                     <div class="flow-step w-32 h-32 flex items-center justify-center bg-teal-500 rounded-full shadow-md">
                         Idea
@@ -141,47 +154,53 @@
             <section id="user-story" class="content-section">
                 <h2 class="text-2xl font-bold text-teal-600 mb-4">User Stories: The Smallest Deliverable Unit of Requirements</h2>
                 <p class="mb-6 text-stone-600">In agile development, user stories are the core way to describe product functionality. They focus on the user's perspective, ensuring we always prioritize creating value for the user, rather than just implementing features. This section will help you master user story writing and core principles through interactive exercises.</p>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3">User Story Builder</h3>
-                        <p class="text-sm text-stone-500 mb-4">Try filling out the form below to build your own user story.</p>
-                        <div class="space-y-4">
-                            <div>
-                                <label for="user-role" class="font-medium">As a [User Role]</label>
-                                <input type="text" id="user-role" placeholder="e.g., Student" class="mt-1 w-full p-2 border border-stone-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
-                            </div>
-                            <div>
-                                <label for="user-goal" class="font-medium">I want to [Some Feature]</label>
-                                <input type="text" id="user-goal" placeholder="e.g., see my learning progress bar on the course page" class="mt-1 w-full p-2 border border-stone-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
-                            </div>
-                            <div>
-                                <label for="user-value" class="font-medium">So that [Achieve Some Value]</label>
-                                <input type="text" id="user-value" placeholder="e.g., clearly understand my learning status and motivate myself" class="mt-1 w-full p-2 border border-stone-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
-                            </div>
+
+                <!-- Definition & Purpose -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-3">Definition & Purpose</h3>
+                    <p class="text-stone-600 mb-2">A user story describes software functionality from the user's perspective, focusing on <strong>user value</strong> rather than a list of features.</p>
+                    <p class="text-stone-600">They help us focus on users, facilitate communication, and adapt to changes.</p>
+                </div>
+
+                <!-- Classic Template -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-3">Classic Template</h3>
+                    <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-md italic text-stone-700">
+                        As a [user role], I want [some feature] so that [I can achieve some value/goal].
+                    </div>
+                </div>
+
+                <!-- Examples -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-3">Examples</h3>
+                    <div class="space-y-3">
+                        <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-md">
+                            <p class="text-stone-700 italic">1. As a <strong>student</strong>, I want to see my learning progress bar on the course page so that I can clearly understand my learning status and motivate myself.</p>
                         </div>
-                        <div id="generated-story" class="mt-6 p-4 bg-teal-50 border-l-4 border-teal-500 text-teal-800 rounded-r-lg min-h-[80px]">
-                            <p class="font-semibold">Your generated user story will appear here.</p>
-                        </div>
-                        <button id="optimize-story-btn" class="mt-4 py-2 px-4 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-600 transition-colors">✨Get Optimization Suggestions✨</button>
-                        <div id="optimization-suggestions" class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-r-lg hidden">
-                            <p class="font-semibold">Optimization Suggestions:</p>
-                            <div id="optimization-content" class="mt-2 text-sm"></div>
-                            <div id="optimization-loading" class="text-center text-sm text-blue-600 hidden">Generating...</div>
+                        <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-md">
+                            <p class="text-stone-700 italic">2. As a <strong>teacher</strong>, I want to export all student assignment grades with one click so that I can quickly complete grade statistics and entry.</p>
                         </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-3">Core Principles</h3>
-                        <div class="grid grid-cols-1 gap-6">
-                            <div>
-                                <h4 class="font-semibold text-lg mb-2">3C Principles</h4>
-                                <div class="chart-container">
-                                    <canvas id="3c-chart"></canvas>
-                                </div>
+                </div>
+
+                <!-- Core Principles -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-3">Core Principles</h3>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">3C Principles</h4>
+                            <div class="chart-container">
+                                <canvas id="3c-chart"></canvas>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-lg mb-2">INVEST Quality Standards</h4>
-                                <div id="invest-accordion" class="space-y-2"></div>
-                            </div>
+                            <ul class="mt-4 space-y-2 text-stone-700">
+                                <li><strong class="text-teal-600">Card</strong> – Written concisely on a card</li>
+                                <li><strong class="text-amber-600">Conversation</strong> – Story is the starting point for discussion</li>
+                                <li><strong class="text-blue-600">Confirmation</strong> – Acceptance criteria (Definition of Done)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">INVEST Quality Standards</h4>
+                            <div id="invest-accordion" class="space-y-2"></div>
                         </div>
                     </div>
                 </div>
@@ -201,31 +220,39 @@
                     </div>
                 </div>
 
-                <div class="mt-8 pt-8 border-t border-stone-200">
-                    <h3 class="text-xl font-semibold mb-3">✨Interview Question Generator✨</h3>
-                    <p class="text-sm text-stone-500 mb-4">Enter a product topic and target user role, and let AI generate a set of interview questions for you.</p>
-                    <div class="space-y-4">
-                        <div>
-                            <label for="product-topic" class="font-medium">Product Topic</label>
-                            <input type="text" id="product-topic" placeholder="e.g., Online Learning Platform" class="mt-1 w-full p-2 border border-stone-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
-                        </div>
-                        <div>
-                            <label for="interview-user-role" class="font-medium">User Role</label>
-                            <input type="text" id="interview-user-role" placeholder="e.g., University Student" class="mt-1 w-full p-2 border border-stone-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
-                        </div>
-                    </div>
-                    <button id="generate-questions-btn" class="mt-4 py-2 px-4 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-600 transition-colors">✨Generate Interview Questions✨</button>
-                    <div id="generated-questions-output" class="mt-4 p-4 bg-purple-50 border-l-4 border-purple-500 text-purple-800 rounded-r-lg hidden">
-                        <p class="font-semibold">Generated Interview Questions:</p>
-                        <div id="questions-content" class="mt-2 text-sm"></div>
-                        <div id="questions-loading" class="text-center text-sm text-purple-600 hidden">Generating...</div>
-                    </div>
+                <!-- Technique Summary -->
+                <div class="mt-6 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-md">
+                    <p class="text-stone-700 font-medium"><strong>Technique Summary:</strong> Cross-validation, multi-channel acquisition, active listening, documentation and organization.</p>
                 </div>
             </section>
 
             <section id="management" class="content-section">
                 <h2 class="text-2xl font-bold text-teal-600 mb-4">Product Requirements Classification and Management</h2>
                 <p class="mb-6 text-stone-600">After collecting numerous requirements, effective classification and management are crucial. This helps the team clarify direction and allocate resources reasonably. In this section, you'll practice classifying requirements through a drag-and-drop exercise, deepening your understanding of different requirement types, and learning about core requirement management activities.</p>
+
+                <!-- Classification Types -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold mb-3">Requirements Classification</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-sky-50 border-l-4 border-sky-500 rounded-md">
+                            <h4 class="font-bold text-sky-700 mb-2">Functional Requirements</h4>
+                            <p class="text-sm text-stone-600">What the product does (e.g., login, payment, search functionality).</p>
+                        </div>
+                        <div class="p-4 bg-amber-50 border-l-4 border-amber-500 rounded-md">
+                            <h4 class="font-bold text-amber-700 mb-2">Non-functional Requirements</h4>
+                            <p class="text-sm text-stone-600">How well it performs (e.g., performance, security, usability, maintainability).</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50 border-l-4 border-emerald-500 rounded-md">
+                            <h4 class="font-bold text-emerald-700 mb-2">Business Requirements</h4>
+                            <p class="text-sm text-stone-600">High-level organizational goals (e.g., improve retention, reduce costs).</p>
+                        </div>
+                        <div class="p-4 bg-violet-50 border-l-4 border-violet-500 rounded-md">
+                            <h4 class="font-bold text-violet-700 mb-2">User Requirements</h4>
+                            <p class="text-sm text-stone-600">User goals and needs (e.g., "I want to conveniently find courses").</p>
+                        </div>
+                    </div>
+                </div>
+
                 <h3 class="text-xl font-semibold mb-3">Requirements Classification Exercise</h3>
                 <p class="text-sm text-stone-500 mb-4">Drag the requirement cards from the left to the corresponding classification areas on the right.</p>
                 <div class="grid md:grid-cols-3 gap-6">
@@ -253,6 +280,20 @@
                     </div>
                 </div>
                 <div id="sort-feedback" class="mt-4 text-center font-medium"></div>
+
+                <!-- Requirements Management -->
+                <div class="mt-8 pt-6 border-t border-stone-200">
+                    <h3 class="text-xl font-semibold mb-3">Requirements Management</h3>
+                    <p class="text-stone-600 mb-3">Effective requirements management involves several core activities:</p>
+                    <ul class="list-disc list-inside space-y-2 text-stone-700">
+                        <li><strong>Tracking</strong> - Monitor the status of each requirement throughout the development lifecycle</li>
+                        <li><strong>Change Control</strong> - Manage and evaluate requirement changes systematically</li>
+                        <li><strong>Prioritization</strong> - Determine which requirements to implement first based on value and urgency</li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-sky-50 border-l-4 border-sky-500 rounded-md">
+                        <p class="text-stone-700 text-sm"><strong>Popular Tools:</strong> Jira, Trello, Confluence, and other project management platforms help teams track and manage requirements effectively.</p>
+                    </div>
+                </div>
             </section>
 
             <section id="pmbok" class="content-section">
@@ -271,6 +312,22 @@
                  <div class="mt-8 bg-stone-100 p-6 rounded-lg">
                     <h3 class="text-xl font-semibold text-stone-700 mb-3">Data Collection and Analysis Methods</h3>
                     <p class="text-stone-600">The previously mentioned methods such as interviews, focus groups, questionnaires, and observation are commonly used 'data collection' tools and techniques in PMBOK. During the requirements gathering phase, product managers utilize these tools to 'analyze' and 'organize' raw information, ultimately forming structured product requirements.</p>
+                </div>
+            </section>
+
+            <!-- Learning Objectives Section -->
+            <section id="objectives" class="content-section">
+                <h2 class="text-2xl font-bold text-teal-600 mb-4">🎯 Learning Objectives</h2>
+                <p class="mb-4 text-stone-600">By the end of this module, you should be able to:</p>
+                <ol class="space-y-3 list-decimal list-inside text-stone-700">
+                    <li class="pl-2">Understand how to transform innovative ideas into actionable product requirements.</li>
+                    <li class="pl-2">Master user-story writing techniques and their core role in agile development.</li>
+                    <li class="pl-2">Familiarize with various requirements-elicitation methods and apply them in practice.</li>
+                    <li class="pl-2">Understand the importance of product-requirements classification and management.</li>
+                    <li class="pl-2">Recognize the relationship between stakeholder & delivery performance domains in PMBOK.</li>
+                </ol>
+                <div class="mt-6 p-4 bg-teal-50 border-l-4 border-teal-500 rounded-md">
+                    <p class="text-stone-700 font-medium">✨ Remember: Effective requirements management is the foundation of successful product development!</p>
                 </div>
             </section>
 
@@ -297,95 +354,6 @@ document.addEventListener('DOMContentLoaded', function() {
             switchTab(button.dataset.target);
         });
     });
-
-    // User Story Section
-    const userRoleInput = document.getElementById('user-role');
-    const userGoalInput = document.getElementById('user-goal');
-    const userValueInput = document.getElementById('user-value');
-    const generatedStoryDiv = document.getElementById('generated-story');
-    const optimizeStoryBtn = document.getElementById('optimize-story-btn');
-    const optimizationSuggestionsDiv = document.getElementById('optimization-suggestions');
-    const optimizationContentDiv = document.getElementById('optimization-content');
-    const optimizationLoadingDiv = document.getElementById('optimization-loading');
-
-    function updateGeneratedStory() {
-        const role = userRoleInput.value.trim() || '[User Role]';
-        const goal = userGoalInput.value.trim() || '[Some Feature]';
-        const value = userValueInput.value.trim() || '[Achieve Some Value]';
-        generatedStoryDiv.innerHTML = `<p>As a <strong class="text-teal-600">${role}</strong>,</p><p>I want to <strong class="text-teal-600">${goal}</strong>,</p><p>so that <strong class="text-teal-600">${value}</strong>.</p>`;
-    }
-
-    [userRoleInput, userGoalInput, userValueInput].forEach(input => {
-        input.addEventListener('input', updateGeneratedStory);
-    });
-    updateGeneratedStory();
-
-    // Gemini API integration for User Story Optimization
-    optimizeStoryBtn.addEventListener('click', async () => {
-        const userStory = generatedStoryDiv.textContent.trim();
-        if (!userStory || userStory.includes('[User Role]')) {
-            optimizationSuggestionsDiv.classList.remove('hidden');
-            optimizationContentDiv.textContent = 'Please complete the user story first.';
-            return;
-        }
-
-        optimizationSuggestionsDiv.classList.remove('hidden');
-        optimizationContentDiv.textContent = '';
-        optimizationLoadingDiv.classList.remove('hidden');
-        optimizeStoryBtn.disabled = true;
-
-        const prompt = `Please provide improvement suggestions for the following user story based on the INVEST principles in agile development. Point out potential shortcomings and give specific optimization directions (e.g., how to make it more independent, estimable, valuable, etc.). Only provide suggestions, do not repeat the user story itself. User Story: "${userStory}"`;
-        
-        let chatHistory = [];
-        chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-        const payload = { contents: chatHistory };
-        const apiKey = ""; 
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-        let retries = 0;
-        const maxRetries = 3;
-        const baseDelay = 1000;
-
-        while (retries < maxRetries) {
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.status === 429) { // Too Many Requests
-                    retries++;
-                    const delay = baseDelay * Math.pow(2, retries - 1);
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    continue;
-                }
-
-                const result = await response.json();
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    optimizationContentDiv.innerHTML = text.replace(/\n/g, '<br>');
-                } else {
-                    optimizationContentDiv.textContent = 'Failed to get optimization suggestions, please try again later.';
-                }
-                break; // Exit loop on success or non-retryable error
-            } catch (error) {
-                optimizationContentDiv.textContent = 'Request failed, please check your network or try again later.';
-                break; // Exit loop on fetch error
-            } finally {
-                optimizationLoadingDiv.classList.add('hidden');
-                optimizeStoryBtn.disabled = false;
-            }
-        }
-        if (retries === maxRetries) {
-            optimizationContentDiv.textContent = 'Request timed out, please try again later.';
-            optimizationLoadingDiv.classList.add('hidden');
-            optimizeStoryBtn.disabled = false;
-        }
-    });
-
 
     // 3C Chart
     new Chart(document.getElementById('3c-chart'), {
@@ -511,80 +479,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Gemini API integration for Interview Question Generator
-    const productTopicInput = document.getElementById('product-topic');
-    const interviewUserRoleInput = document.getElementById('interview-user-role');
-    const generateQuestionsBtn = document.getElementById('generate-questions-btn');
-    const generatedQuestionsOutputDiv = document.getElementById('generated-questions-output');
-    const questionsContentDiv = document.getElementById('questions-content');
-    const questionsLoadingDiv = document.getElementById('questions-loading');
-
-    generateQuestionsBtn.addEventListener('click', async () => {
-        const productTopic = productTopicInput.value.trim();
-        const userRole = interviewUserRoleInput.value.trim();
-
-        if (!productTopic || !userRole) {
-            generatedQuestionsOutputDiv.classList.remove('hidden');
-            questionsContentDiv.textContent = 'Please fill in both product topic and user role.';
-            return;
-        }
-
-        generatedQuestionsOutputDiv.classList.remove('hidden');
-        questionsContentDiv.textContent = '';
-        questionsLoadingDiv.classList.remove('hidden');
-        generateQuestionsBtn.disabled = true;
-
-        const prompt = `For a product about "${productTopic}", targeting the user role of "${userRole}", generate 5-7 in-depth interview questions to help a product manager gather genuine requirements and pain points. Questions should be specific, open-ended, and encourage the user to share experiences and feelings.`;
-        
-        let chatHistory = [];
-        chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-        const payload = { contents: chatHistory };
-        const apiKey = ""; 
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-        let retries = 0;
-        const maxRetries = 3;
-        const baseDelay = 1000;
-
-        while (retries < maxRetries) {
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.status === 429) { 
-                    retries++;
-                    const delay = baseDelay * Math.pow(2, retries - 1);
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    continue;
-                }
-
-                const result = await response.json();
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    questionsContentDiv.innerHTML = text.replace(/\n/g, '<br>');
-                } else {
-                    questionsContentDiv.textContent = 'Failed to generate interview questions, please try again later.';
-                }
-                break; 
-            } catch (error) {
-                questionsContentDiv.textContent = 'Request failed, please check your network or try again later.';
-                break; 
-            } finally {
-                questionsLoadingDiv.classList.add('hidden');
-                generateQuestionsBtn.disabled = false;
-            }
-        }
-        if (retries === maxRetries) {
-            questionsContentDiv.textContent = 'Request timed out, please try again later.';
-            questionsLoadingDiv.classList.add('hidden');
-            generateQuestionsBtn.disabled = false;
-        }
-    });
     
     // Management Section - Drag and Drop
     const requirements = [
